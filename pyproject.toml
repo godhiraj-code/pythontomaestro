@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythontomaestro"
+version = "0.1.0"
+authors = [
+  { name="Example Author", email="author@example.com" },
+]
+description = "A tool to convert Python automation scripts (Selenium/Appium) to Maestro YAML flows."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pyyaml",
+]
+
+[project.scripts]
+pythontomaestro = "src.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/example/pythontomaestro"
+"Bug Tracker" = "https://github.com/example/pythontomaestro/issues"
