@@ -1,5 +1,8 @@
+DEFAULT_APP_ID = "com.example.app"
+
+
 class MaestroMapper:
-    def map(self, tests):
+    def map(self, tests, app_id=DEFAULT_APP_ID):
         """
         Maps Python AST nodes/steps to Maestro commands.
         Returns a list of flows (one per test).
@@ -7,7 +10,7 @@ class MaestroMapper:
         flows = []
         for test in tests:
             flow = {
-                "appId": "com.example.app", # TODO: Make configurable
+                "appId": app_id,
                 "name": test["name"],
                 "---": [
                     {"launchApp": {"clearState": True}}

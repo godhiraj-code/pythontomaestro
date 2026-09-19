@@ -11,16 +11,20 @@ pip install pythontomaestro
 ## Usage
 
 ```bash
-pythontomaestro <input_file_or_dir> <output_dir>
+pythontomaestro <input_file> <output_dir> [--app-id APP_ID]
 ```
 
 Example:
 
 ```bash
-pythontomaestro tests/my_test.py output/
+pythontomaestro tests/my_test.py output/ --app-id com.acme.myapp
 ```
 
 This will read `tests/my_test.py`, convert the automation steps, and save the resulting YAML flows into the `output/` directory (e.g., `output/test_login_success.yaml`).
+
+`--app-id` sets the target application's Maestro `appId`. It defaults to
+`com.example.app` for backward compatibility; production flows should pass the
+real application ID.
 
 ## Features
 
