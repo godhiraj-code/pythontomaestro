@@ -9,7 +9,7 @@ class Converter:
         self.mapper = MaestroMapper()
         self.generator = YamlGenerator()
 
-    def convert(self, input_path, output_dir):
+    def convert(self, input_path, output_dir, app_id=None):
         """
         Converts a Python automation script to Maestro YAML flows.
         """
@@ -18,7 +18,10 @@ class Converter:
         test_definitions = self.parser.parse(input_path)
         
         # 2. Map
-        maestro_flows = self.mapper.map(test_definitions)
+        if app_id is None:
+            maestro_flows = self.mapper.map(test_definitions)
+        else:
+            maestro_flows = self.mapper.map(test_definitions, app_id=app_id)
         
         # 3. Generate
         import os

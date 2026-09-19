@@ -1,0 +1,6 @@
+appId: com.acme.shop
+name: test_checkout
+'---':
+- launchApp:
+    clearState: true
+- openLink: https://example.com/checkout
