@@ -5,7 +5,8 @@ class YamlGenerator:
         """
         Writes the Maestro flow data to a YAML file.
         """
-        with open(output_path, "w") as f:
-            if flow_data.pop("_has_errors", False):
+        output = {key: value for key, value in flow_data.items() if key != "_has_errors"}
+        with open(output_path, "w", encoding="utf-8") as f:
+            if flow_data.get("_has_errors", False):
                 f.write("# WARNING: This flow contains unsupported actions (TODOs). Manual review required.\n")
-            yaml.dump(flow_data, f, sort_keys=False)
+            yaml.safe_dump(output, f, sort_keys=False, allow_unicode=True)

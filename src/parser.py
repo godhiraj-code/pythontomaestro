@@ -1,5 +1,6 @@
 import ast
 import logging
+import tokenize
 
 class MethodVisitor(ast.NodeVisitor):
     def __init__(self):
@@ -189,7 +190,7 @@ class PythonParser:
         Returns a list of test definitions.
         """
         logging.info(f"Parsing {file_path}")
-        with open(file_path, "r") as f:
+        with tokenize.open(file_path) as f:
             tree = ast.parse(f.read())
         
         visitor = TestVisitor()
