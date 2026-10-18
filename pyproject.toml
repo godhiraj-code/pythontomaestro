@@ -29,6 +29,7 @@ pythontomaestro = "src.cli:main"
 [project.urls]
 "Homepage" = "https://github.com/godhiraj-code/pythontomaestro"
 "Bug Tracker" = "https://github.com/godhiraj-code/pythontomaestro/issues"
+"X" = "https://x.com/dkkkkd"
 
 [tool.setuptools]
 packages = ["src"]
