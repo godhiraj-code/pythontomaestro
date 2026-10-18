@@ -53,3 +53,7 @@ When the tool encounters such logic, it will:
 ```
 
 **You must manually review the generated YAML files and address any `TODO` items.**
+
+## Author
+
+[Dhiraj Das](https://www.dhirajdas.dev) · [Follow @dkkkkd on X](https://x.com/dkkkkd)
